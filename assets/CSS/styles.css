@@ -1,0 +1,36 @@
+*{
+    margin: 0 auto;
+}
+
+.box1 {
+    position: absolute;
+    margin-top: -120px;
+    margin-left: 0;
+    background-color: white;
+    height: 800px;
+    width: 1500px;
+}
+
+.box1 h1{
+    position: absolute;
+    margin-left: 33%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    height: 45px;
+    width: 475px;
+    font-size: 35px;
+    font-size: 55px;
+}
+
+
+.startBtn {
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 20%;
+    display: flex;
+    justify-content: center;
+    height: 45px;
+    width: 275px;
+    font-size: 35px;
+}
