@@ -1,65 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="./assets/CSS/styles.css"/>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding Quiz!!</title>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./assets/CSS/styles.css" />
+  </head>
 
-    <header class="navigation">
-       
-        <div class="highscore-text"><h1>HIGHSCORE_MARKER</h1>
-       
- 
-            <!-- <h1>TIMER_MARKER</h1> -->
-                <div class = "timer-text">
-                    <h3 class="time-out">seconds remaining</h3>
-                    <div class="large-font timer-count">--</div>
-                    <br>
-                    <div class="timer-deduction">--</div>
-              </div>
-
-        </div> 
-
+  <body>
+    <header class="header-icons">
+      <a href="./data.html">Highscores</a>
+      <div id="timer">
+        <span>Seconds Remaining: </span><span id="counterId"></span>
+      </div>
     </header>
 
-    <div class="box1"> <h1>JavaScript Quiz</h1>
-        <button class="startBtn" data-state="visible"> Start Quiz </button>
+    <main>
+      <div class="container" id="quiz-title">
+        <div class="row">
+          <div class="col-12 col-lg-5 mx-auto p-3">
+            <h1>Coding Quiz!</h1>
+          </div>
+        </div>
+
+    <div class="row">
+        <div class="col-12 col-lg-6 mx-auto p-3">
+            <div class="rules-container">
+                <h3 class="rules-title" >Rules</h3>
+                <ul class="rules-list"> 
+                    <li class="rule"> Click start to begin.</li>
+                    <li class="rule"> Once the test begins, the 2min timer will start.</li>
+                    <li class="rule"> Make sure to read each question carefully.</li>
+                    <li class="rule"> Choose an answer by clicking on the available responses.</li>
+                    <li class="rule"> After you choose an answer, you will move on to the next question.</li>
+                    <li class="rule"> If your answer is incorrect, 10 seconds will be deducted from the timer.</li>
+                    <li class="rule"> After all questions are answered, you score will be revealed at the end.</li>
+                </ul>
+            </div>
+          </div>
+        </div>
+
+    <div class="row">
+          <div class="col-12 col-lg-6 mx-auto p-3">
+            <button class="btn btn-primary btn-lg" type="submit" id="startQuizBtn"> Start Quiz </button>
+          </div>
+        </div>
     </div>
-        
-   
 
-    <main class="question-box" data-state="hidden">
-        <div class="intructions">
-            <ul> <div class="questions-text">__</div>
-
-                <li class="answer-text"> <h1>ANSWERS.li_MARKER</h1>
-
-            </li>
-
-            </ul>
+    <div class="container" id="quizId">
+        <div class="row">
+          <div class="col-12 col-lg-6 mx-auto text-left p-3">
+                <h3 id="question"></h3>
+            </div>
         </div>
-        <div class="questions">
-            <h1 class="qtitle">Quiz Questions</h1>
-            <ol>
-                <button class="answerBtn a1">
-                </button>
-                <button class="answerBtn a2">
-                </button>
-                <button class="answerBtn a3">
-                </button>
-                <button class="answerBtn a4">
-                </button>
-            </ol>
-            <button class="nextQuestion"> Next </button>
+        <div class="row">
+          <div id="btn-grid" class="col-12 col-lg-6 mx-auto py-2">
+            <button
+              class="btn btn-dark btn-lg answer d-block mb-1"
+              value="0"
+              type="submit"
+            >
+              <span id="answer1"></span>
+            </button>
+            <button
+              class="btn btn-dark btn-lg answer d-block mb-1"
+              value="1"
+              type="submit"
+            >
+              <span id="answer2"></span>
+            </button>
+            <button
+              class="btn btn-dark btn-lg answer d-block mb-1"
+              value="2"
+              type="submit"
+            >
+              <span id="answer3"></span>
+            </button>
+            <button
+              class="btn btn-dark btn-lg answer d-block mb-1"
+              value="3"
+              type="submit"
+            >
+              <span id="answer4"></span>
+            </button>
+          </div>
         </div>
+        <div class="row">
+          <div class="col-12 col-lg-6 mx-auto text-left py-1">
+            <hr id="resultId" />
+            <h3 class="result" id="correct">Correct!</h3>
+            <h3 class="result" id="wrong">Wrong!</h3>
+          </div>
+        </div>
+    </div>
 
+      <div class="container" id="endQuiz">
+        <div class="row">
+          <div class="col-12 col-lg-5 mx-auto text-left p-3">
+            <h3 id="end">End of Quiz!</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-6 mx-auto p-3 font-weight-bold text-left">
+            <span></span>Time Left: <span id="finalScore"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-6 mx-auto p-3">
+            <form class="form-inline" id="userName-form">
+              <div class="mb-2 text-left" style="width: 90px">
+                <label for="staticEnteruserNames" class="sr-only"
+                  >Enter initials:</label
+                >
+                <input
+                  type="text"
+                  readonly
+                  class="form-control-plaintext"
+                  id="staticEnteruserNames"
+                  value="Enter Initials Here:"
+                />
+              </div>
+
+              <div class="form-group mx-sm-3 mb-2">
+                <label for="userName-text" class="sr-only">User Initials</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="userName-text"
+                  placeholder="Initials Here"
+                />
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary mb-2"
+                id="userName-text"
+              >
+                Submit
+              </button>
+            </form>
+            <div class="row">
+              <div
+                class="col-12 col-lg-6 mx-auto p-3 font-weight-bold text-left"
+                style="display: none"
+              >
+                <span>Users: </span><span id="userName-count">0</span>
+              </div>
+            </div>
+
+            <ul id="userName-list"></ul>
+          </div>
+        </div>
+      </div>
     </main>
-    
 
-    <script src="./assets/Script/script.js"></script>
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="quiz.js"></script>
+  </body>
 </html>

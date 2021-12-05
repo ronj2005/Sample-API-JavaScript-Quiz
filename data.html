@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>High Scores Data</title>
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./assets/CSS/styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <div class="container" id="highScores">
+        <div class="row">
+          <div class="col-12 col-md-9 col-lg-6 mx-auto p-2 text-center">
+            <h1>Highscores</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-7 col-sm-6 col-md-5 col-lg-4 p-2 mx-auto text-left">
+            <ul id="highScoresList"></ul>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="col-12 col-md-9 col-lg-6 mx-auto py-3 justify-content-around"
+          >
+            <button
+              class="btn btn-primary btn-lg mr-3"
+              style="width: fit-content"
+              id="goBack"
+              type="submit"
+            >
+              Home
+            </button>
+            <button
+              class="btn btn-primary btn-lg"
+              style="width: fit-content"
+              id="clearQuiz"
+              type="submit"
+            >
+              Clear Highscores
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="data.js"></script>
+  </body>
+</html>
