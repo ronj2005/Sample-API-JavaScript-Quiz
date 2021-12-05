@@ -11,7 +11,8 @@ This is a simple quiz created to test and showcase DOM manipulation and Local st
 
 # Screenshot
 
-![alt text](http://url/to/screenshot_01.png)
+![alt text](http://url/to/screenshot01.png)
+
 
 # License
 * N/A

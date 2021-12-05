@@ -1,5 +1,6 @@
-init();
 
+var userNameList = document.querySelector("#highScoresList");
+init();
 function init() {
   var storedHighScores = JSON.parse(localStorage.getItem("highScores"));
 
@@ -11,11 +12,11 @@ function init() {
 }
 
 function renderHighScores() {
-  for (let i = 0; i < highScores.length; i++) {
-    let newHighScore = document.createElement("li");
-    let userNumber = i + 1;
-    let userName = highScores[i].user;
-    let userScore = highScores[i].score;
+  for (var i = 0; i < highScores.length; i++) {
+    var newHighScore = document.createElement("li");
+    var userNumber = i + 1;
+    var userName = highScores[i].user;
+    var userScore = highScores[i].score;
 
     newHighScore.textContent =
       userNumber + ". " + userName + " -- " + userScore;
@@ -23,14 +24,14 @@ function renderHighScores() {
   }
 }
 
-let goBack = document.querySelector("#goBack");
+var goBack = document.querySelector("#goBack");
 goBack.addEventListener("click", function (event) {
   event.preventDefault();
 
   window.location.href = "./index.html";
 });
 
-let clearQuiz = document.querySelector("#clearQuiz");
+var clearQuiz = document.querySelector("#clearQuiz");
 clearQuiz.addEventListener("click", function (event) {
   event.preventDefault();
 
